@@ -1,5 +1,5 @@
 from struct import *
-import sys
+import sys, os
 
 def is_fdi(image_file_path):
     """
@@ -15,6 +15,7 @@ def is_fdi(image_file_path):
     } FDIHDR;
     intel dwords - little endian
     """
+    size = os.path.getsize(image_file_path)
     with open(image_file_path, 'rb') as f:
         raw_header = f.read(32)
         dummy, fddtype, headersize, fddsize, sectorsize, sectors, surfaces, cylinders = unpack('<8L', raw_header)
@@ -30,6 +31,8 @@ def is_fdi(image_file_path):
             return (False, 'Dummy out of bounds: %d' % dummy)
         if cylinders > 100:
             return (False, 'Ridiculous cylinder count: %d' % cylinders)
+        if size > 1265664:
+            return (False, 'Too big to be an FDI: %d' % size)
         return (True, '')
 
 if __name__ == '__main__':
