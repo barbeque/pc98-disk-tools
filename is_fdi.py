@@ -19,12 +19,14 @@ def is_fdi(image_file_path):
     with open(image_file_path, 'rb') as f:
         raw_header = f.read(32)
         dummy, fddtype, headersize, fddsize, sectorsize, sectors, surfaces, cylinders = unpack('<8L', raw_header)
-        #print 'dummy =', dummy
-        #print 'fddtype =', fddtype
-        #print 'sector size =', sectorsize
-        #print 'sectors =', sectors
-        #print 'surfaces =', surfaces
-        #print 'cylinders =', cylinders
+        print 'dummy =', dummy
+        print 'fddtype =', fddtype
+        print 'header size =', headersize
+        print 'fdd size = ', fddsize
+        print 'sector size =', sectorsize
+        print 'sectors =', sectors
+        print 'surfaces =', surfaces
+        print 'cylinders =', cylinders
 
         if dummy != 0:
             # this seems like a pretty good indicator, empirically
