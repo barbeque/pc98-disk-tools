@@ -15,12 +15,12 @@ def hdm_to_fdi(hdm_file_path):
     } FDIHDR;
     intel dwords - little endian
     """
-    print 'Converting %s' % hdm_file_path
+    print('Converting %s' % hdm_file_path)
 
     # first get file size
     size = os.path.getsize(hdm_file_path)
     if size != 1261568:
-        print 'Be careful, I was only tested with HDM (2HD) files of size 1261568'
+        print('Be careful, I was only tested with HDM (2HD) files of size 1261568')
 
     # load the entire file into a blob
     with open(hdm_file_path, 'rb') as i:
@@ -53,11 +53,11 @@ def hdm_to_fdi(hdm_file_path):
     with open(target_path, 'wb') as o:
         o.write(full_fdi_image)
 
-    print 'Completed write of %s' % target_path
+    print('Completed write of %s' % target_path)
 
 if __name__ == '__main__':
     if len(sys.argv) < 2:
-        print 'usage: %s [hdm floppy image file]' % sys.argv[0]
+        print('usage: %s [hdm floppy image file]' % sys.argv[0])
     else:
         for hdm_file in sys.argv[1:]:
             hdm_to_fdi(hdm_file)
