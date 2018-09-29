@@ -1,7 +1,6 @@
 from struct import *
 import sys, os, inspect
 # extract exe header
-
 def extract_exe_header(exe_path):
     print(f'decoding {exe_path}')
     with open(exe_path, 'rb') as i:
@@ -33,6 +32,9 @@ def extract_exe_header(exe_path):
         print(f"CS offset = '0x{'%02x' % cs_offset}'")
         print(f"reloc. offset = '0x{'%02x' % reloc_offset}'")
         print(f"overlay number = '0x{'%02x' % overlay_number}'")
+
+        if checksum == 184:
+            print(f"Checksum is probably BS")
 
 if __name__ == '__main__':
     if len(sys.argv) > 1:
