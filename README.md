@@ -12,9 +12,9 @@ Has a bunch of best-guess heuristics about whether or not a random image actuall
 
 Useful so you don't waste too much time looking at an image that can't possibly be right.
 
-Usage:
+#### Usage:
 ```bash
-python3 is_fdi.py Windows\ 95\ \?\?\?\?\?\?.fdi
+$ python3 is_fdi.py Windows\ 95\ \?\?\?\?\?\?.fdi
 dummy = 0
 fddtype = 144
 header size = 4096
@@ -35,9 +35,9 @@ It also worked for me on a D88 image that was converted using [d88split](https:/
 
 Patches very welcome.
 
-Usage:
+#### Usage:
 ```bash
-python3 hdm_to_fdi.py Lemmings.hdm
+$ python3 hdm_to_fdi.py Lemmings.hdm
 Converting Lemmings.hdm
 Completed write of Lemmings.fdi
 ```
