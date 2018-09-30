@@ -15,7 +15,14 @@ def hdm_to_fdi(hdm_file_path):
     } FDIHDR;
     intel dwords - little endian
     """
-    print('Converting %s' % hdm_file_path)
+    print(f'Converting {hdm_file_path}')
+    
+    # sanity check to see if it is a different format of hdm
+    (filename, extension) = os.path.splitext(hdm_file_path)
+    extension = extension.lower()
+    if extension == 'fdi':
+        print(f'Image is already an FDI, aborting')
+    # todo: load alternative ideal sizes, surfaces, cylinders for hdb, etc 
 
     # first get file size
     size = os.path.getsize(hdm_file_path)
@@ -45,7 +52,6 @@ def hdm_to_fdi(hdm_file_path):
     # now write that puppy out
     destinationdir = os.path.dirname(hdm_file_path)
     filename = os.path.basename(hdm_file_path)
-    (filename, extension) = os.path.splitext(filename)
     fdi_filename = filename + '.fdi'
 
     target_path = os.path.join(destinationdir, fdi_filename)
