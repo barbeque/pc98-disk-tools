@@ -41,3 +41,12 @@ $ python3 hdm_to_fdi.py Lemmings.hdm
 Converting Lemmings.hdm
 Completed write of Lemmings.fdi
 ```
+
+### `mount_disk_image.sh`
+Convenience script to mount a raw MSDOS disk image as a loopback on macOS.
+
+#### Usage:
+```bash
+$ sh mount_disk_image.sh Lemmings.hdm
+/dev/disk3	/Volumes/Untitled
+```
