@@ -51,8 +51,8 @@ def hdm_to_fdi(hdm_file_path):
 
     # now write that puppy out
     destinationdir = os.path.dirname(hdm_file_path)
-    filename = os.path.basename(hdm_file_path)
-    fdi_filename = filename + '.fdi'
+    base_filename = os.path.basename(hdm_file_path)
+    fdi_filename = os.path.splitext(base_filename)[0] + '.fdi'
 
     target_path = os.path.join(destinationdir, fdi_filename)
 
