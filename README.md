@@ -45,6 +45,8 @@ Completed write of Lemmings.fdi
 ### `mount_disk_image.sh`
 Convenience script to mount a raw MSDOS disk image as a loopback on macOS.
 
+Mounts read-write, so be careful if you are afraid of corrupting a disk image.
+
 #### Usage:
 ```bash
 $ sh mount_disk_image.sh Lemmings.hdm
