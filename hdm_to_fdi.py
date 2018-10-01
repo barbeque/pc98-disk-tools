@@ -59,11 +59,11 @@ def hdm_to_fdi(hdm_file_path):
     with open(target_path, 'wb') as o:
         o.write(full_fdi_image)
 
-    print('Completed write of %s' % target_path)
+    print(f'Completed write of {target_path}')
 
 if __name__ == '__main__':
     if len(sys.argv) < 2:
-        print('usage: %s [hdm floppy image file]' % sys.argv[0])
+        print(f'usage: {sys.argv[0]} [hdm floppy image file]')
     else:
         for hdm_file in sys.argv[1:]:
             hdm_to_fdi(hdm_file)
