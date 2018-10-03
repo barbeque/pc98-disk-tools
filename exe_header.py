@@ -34,6 +34,9 @@ def extract_exe_header(exe_path):
         print(f"overlay number = '0x{'%02x' % overlay_number}'")
 
         if checksum == 184:
+            # 184 seems to be common on a lot of non-pc98 DOS programs...
+            # it's probably a 'disused field' because the checksum
+            # math never makes sense
             print(f"Checksum is probably BS")
 
 if __name__ == '__main__':
