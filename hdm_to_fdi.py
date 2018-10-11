@@ -1,6 +1,16 @@
 from struct import *
 import sys, os
 
+# MS-DOS disk formats:
+# HDM -> 2HD/360rpm -> 1024 bytes * 8 sectors * 2 surfaces * 77 cyls = 1,261,568
+# HD5 -> 2HD/360rpm -> 512 bytes * 15 sectors * 2 surfaces * 80 cyls = 1,228,800
+# HD4 -> 2HD/300rpm -> 512 bytes * 18 sectors * 2 surfaces * 80 cyls = 1,474,560
+# DD6 -> 2DD/300rpm -> 512 bytes * 8 sectors * 2 surfaces * 80 cyls = 655,360
+# DD9 -> 2DD/360rpm -> 512 bytes * 9 sectors * 2 surfaces * 80 cyls = 737,280
+# N88-BASIC disk formats:
+# HDB -> 2HD/360rpm -> (128/256) bytes * 26 sectors * 2(?) surfaces * 77 cyls. First track single-density (128-bytes), latter tracks 256 byte double density
+# DDB -> 2DD/300rpm -> 256 bytes * 16 sectors * 2 surfaces * 80 cyls
+
 def hdm_to_fdi(hdm_file_path):
     """
     typedef struct {
@@ -16,13 +26,13 @@ def hdm_to_fdi(hdm_file_path):
     intel dwords - little endian
     """
     print(f'Converting {hdm_file_path}')
-    
+
     # sanity check to see if it is a different format of hdm
     (filename, extension) = os.path.splitext(hdm_file_path)
     extension = extension.lower()
     if extension == 'fdi':
         print(f'Image is already an FDI, aborting')
-    # todo: load alternative ideal sizes, surfaces, cylinders for hdb, etc 
+    # todo: load alternative ideal sizes, surfaces, cylinders for hdb, etc
 
     # first get file size
     size = os.path.getsize(hdm_file_path)
