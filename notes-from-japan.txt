@@ -1,7 +1,14 @@
 Source: https://melog.info/archives/2004/09/30223144.html
 
 It is nowadays ... The following extensions made with software BKDSK are all solid images.  The type of disk is distinguished by the extension.  The file size is used to calculate the number of tracks. (160 track use with 1024 × 8 sectors, etc.)
-MS-DOS format  * .HDM → 2 HD (360 rpm) 1024 bytes × 8 sectors × 154 tracks  *. HD 5 → 2 HD (360 rpm) 512 bytes × 15 sectors × 160 tracks  *. HD 4 → 2 HD (300 rpm) 512 bytes × 18 sectors × 160 tracks  * .DD6 → 2DD (300 rpm) 512 bytes × 8 sectors × 160 tracks  * .DD 9 → 2DD (300 rpm) 512 bytes × 9 sectors × 160 tracks
-N88-BASIC format  * .HDB → 2HD (360 rpm) 128/256 bytes × 26 sectors × 154 tracks  ↑ track 0 only single density 128 bytes, others double density 256 bytes  * .DDB → 2DD (300 rpm) 256 bytes × 16 sectors × 160 tracks
+MS-DOS format
+ * .HDM → 2HD (360 rpm) 1024 bytes × 8 sectors × 154 tracks 
+ * .HD5 → 2HD (360 rpm) 512 bytes × 15 sectors × 160 tracks  
+ * .HD4 → 2HD (300 rpm) 512 bytes × 18 sectors × 160 tracks  
+ * .DD6 → 2DD (300 rpm) 512 bytes × 8 sectors × 160 tracks  
+ * .DD9 → 2DD (300 rpm) 512 bytes × 9 sectors × 160 tracks
+N88-BASIC format
+ * .HDB → 2HD (360 rpm) 128/256 bytes × 26 sectors × 154 tracks  ↑ track 0 only single density 128 bytes, others double density 256 bytes  
+ * .DDB → 2DD (300 rpm) 256 bytes × 16 sectors × 160 tracks
 
 "Trying to say that the FDI format is just a solid image when cutting out 4096 bytes of header. Therefore, there is no value for FDI."
