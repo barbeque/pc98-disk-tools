@@ -1,16 +1,11 @@
 import sys
 from struct import *
+from fdi import *
 
 def make_blank_fdi(output_fdi_path):
-    dummy = 0
-    fddtype = 144 # no idea what this means, just copied it from another fdi file that worked
-    headersize = 4096
-    fdd_size = 1261568 # 2HD
-    sector_size = 1024
-    sector_count = 8
-    surfaces = 2
-    cylinders = 77
-    fdi_image = pack('<8L4064x1261568x', dummy, fddtype, headersize, fdd_size, sector_size, sector_count, surfaces, cylinders)
+    header = make_fdi_header()
+    blank_space = pack('1261568x')
+    fdi_image = header + blank_space
     with open(output_fdi_path, 'wb') as o:
         o.write(fdi_image)
     print(f'Wrote {output_fdi_path}')
