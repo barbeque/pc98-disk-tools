@@ -35,6 +35,9 @@ def is_fdi(image_file_path):
             return (False, 'Ridiculous cylinder count: %d' % cylinders)
         if size > 1265664:
             return (False, 'Too big to be an FDI: %d' % size)
+
+        # look for suspicious pad bytes
+
         return (True, '')
 
 if __name__ == '__main__':
