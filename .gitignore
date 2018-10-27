@@ -1,4 +1,6 @@
 *.fdi
 *.FDI
 *.hdm
+*.t88
+*.cmt
 __pycache__
