@@ -27,13 +27,18 @@ Windows 95 ??????.fdi: yes
 ```
 
 ### `hdm_to_fdi.py`
-Converts HDM images to FDI by generating a fake FDI header for a "2HD"-size disk, and then appends the header and the pad bytes to the front of the HDM raw image.
+Converts raw HDM images to FDI by generating a fake FDI header for a "2HD"-size disk, and then appends the header and the pad bytes to the front of the HDM raw image.
 
 This worked with FlashFloppy. I don't think it will work if you have any other BKDSK size format (e.g. `*.HD5` or `*.DD9`).
 
 It also worked for me on a D88 image that was converted using [d88split](https://github.com/tomari/d88split)'s `d882mhlt` utility, which makes me think that any raw (i.e. uncompressed) Mahalito image will work.
 
 Patches very welcome.
+
+### `fdi_to_hdm.py`
+Converts FDI images to HDM (raw) by clawing the first 4096 bytes off of them and then sanity-checking that they seem like the right length afterward.
+
+This worked to convert a few FDI images to a raw image that I could mount with `mount_disk_image.sh`.
 
 #### Usage:
 ```bash
@@ -52,3 +57,5 @@ Mounts read-write, so be careful if you are afraid of corrupting a disk image.
 $ sh mount_disk_image.sh Lemmings.hdm
 /dev/disk3	/Volumes/Untitled
 ```
+
+On Linux, you would probably use something like `mount -o loop Lemmings.hdm /mnt/Lemmings`, but I haven't tried this yet.
