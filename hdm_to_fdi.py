@@ -1,5 +1,6 @@
 from struct import *
 import sys, os
+import fdi
 
 # MS-DOS disk formats:
 # HDM -> 2HD/360rpm -> 1024 bytes * 8 sectors * 2 surfaces * 77 cyls = 1,261,568
@@ -60,11 +61,7 @@ def hdm_to_fdi(hdm_file_path):
     full_fdi_image = fdi_header + hdm_blob
 
     # now write that puppy out
-    destinationdir = os.path.dirname(hdm_file_path)
-    base_filename = os.path.basename(hdm_file_path)
-    fdi_filename = os.path.splitext(base_filename)[0] + '.fdi'
-
-    target_path = os.path.join(destinationdir, fdi_filename)
+    target_path = fdi.change_extension_of_path(hdm_file_path, '.fdi')
 
     with open(target_path, 'wb') as o:
         o.write(full_fdi_image)
