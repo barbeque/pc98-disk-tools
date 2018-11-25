@@ -35,6 +35,13 @@ It also worked for me on a D88 image that was converted using [d88split](https:/
 
 Patches very welcome.
 
+#### Usage:
+```bash
+$ python3 hdm_to_fdi.py Lemmings.hdm
+Converting Lemmings.hdm
+Completed write of Lemmings.fdi
+```
+
 ### `fdi_to_hdm.py`
 Converts FDI images to HDM (raw) by clawing the first 4096 bytes off of them and then sanity-checking that they seem like the right length afterward.
 
@@ -42,9 +49,8 @@ This worked to convert a few FDI images to a raw image that I could mount with `
 
 #### Usage:
 ```bash
-$ python3 hdm_to_fdi.py Lemmings.hdm
-Converting Lemmings.hdm
-Completed write of Lemmings.fdi
+$ python3 fdi_to_hdm.py Lemmings.fdi
+Completed write of Lemmings.hdm
 ```
 
 ### `mount_disk_image.sh`
