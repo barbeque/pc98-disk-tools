@@ -6,6 +6,8 @@ Many historical image sets of PC98 software store them in "BKDSK" HDM format, bu
 
 Most people used the closed-source (AFAIK) [Virtual Floppy Image Converter](https://www.vector.co.jp/soft/win95/util/se151106.html) tool, which is excellent. Out of fear of the software one day becoming incompatible, I wanted to figure out for myself what the format differences were. Also, VFIC didn't run right in WINE, which meant having to use a real Windows machine every time I wanted to update or add images.
 
+Nowadays, the FlashFloppy firmware supports HDM images, so this code is primarily useful as a reference.
+
 ## The tools
 ### `is_fdi.py`
 Has a bunch of best-guess heuristics about whether or not a random image actually _is_ in the FDI format. I ran across a few that were just raw images renamed to .FDI, and so had nonsense headers or the wrong size.
