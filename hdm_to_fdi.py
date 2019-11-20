@@ -46,7 +46,7 @@ def hdm_to_fdi(hdm_file_path):
 
     # prepare an fdi header that works
     dummy = 0
-    fddtype = 144 # no idea what this means, just copied it from another fdi file that worked
+    fddtype = 144 # 144 = 0x90 = 1.2MB 2HD
     headersize = 4096
     fdd_size = size
     sector_size = 1024
