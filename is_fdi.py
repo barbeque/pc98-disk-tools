@@ -31,7 +31,7 @@ def is_fdi(image_file_path):
         if dummy != 0:
             # this seems like a pretty good indicator, empirically
             return (False, 'Dummy out of bounds: %d' % dummy)
-        if cylinders > 100:
+        if cylinders > 100 or cylinders < 10:
             return (False, 'Ridiculous cylinder count: %d' % cylinders)
         if size > 1265664:
             return (False, 'Too big to be an FDI: %d' % size)
