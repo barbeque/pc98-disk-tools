@@ -19,6 +19,9 @@ def change_extension_of_path(old_path, new_extension):
     new_filename = os.path.splitext(old_path)[0] + new_extension
     return os.path.join(destinationdir, new_filename)
 
+def warn(warning_message):
+    print("WARNING: %s" % warning_message)
+
 # TODO: unpack_fdi_header
 
 class FdiTests(unittest.TestCase):

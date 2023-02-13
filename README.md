@@ -55,6 +55,15 @@ $ python3 fdi_to_hdm.py Lemmings.fdi
 Completed write of Lemmings.hdm
 ```
 
+### `hdi_to_flat.py`
+Converts an *.HDI hard disk image into a flat image, suitable for writing to a CompactFlash card or other destination hard drive using `dd` or similar tool.
+
+#### Usage:
+```bash
+$ python3 hdi_to_flat.py A Ressha de Ikou III HD - Hard Disk Only.hdi
+Completed write of A Ressha de Ikou III HD - Hard Disk Only.img
+```
+
 ### `mount_disk_image.sh`
 Convenience script to mount a raw MSDOS disk image as a loopback on macOS.
 
