@@ -64,6 +64,15 @@ $ python3 hdi_to_flat.py A Ressha de Ikou III HD - Hard Disk Only.hdi
 Completed write of A Ressha de Ikou III HD - Hard Disk Only.img
 ```
 
+### `make_blank_image.py`
+Produces a blank FDI or HDM image. Determines which one based on the extension given.
+
+### Usage:
+```bash
+% python3 make_blank_image.py blank.fdi
+Wrote blank.fdi
+```
+
 ### `mount_disk_image.sh`
 Convenience script to mount a raw MSDOS disk image as a loopback on macOS.
 
