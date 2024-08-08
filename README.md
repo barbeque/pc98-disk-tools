@@ -8,6 +8,9 @@ Most people used the closed-source (AFAIK) [Virtual Floppy Image Converter](http
 
 Nowadays, the FlashFloppy firmware supports HDM images, so this code is primarily useful as a reference.
 
+## Getting Started
+Download this repository using the "Download ZIP" option under the Code menu at the top of the page, then unzip the zip. Make sure you have Python 3 installed.
+
 ## The tools
 ### `is_fdi.py`
 Has a bunch of best-guess heuristics about whether or not a random image actually _is_ in the FDI format. I ran across a few that were just raw images renamed to .FDI, and so had nonsense headers or the wrong size.
