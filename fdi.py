@@ -16,7 +16,7 @@ def make_fdi_header(dummy=0,
 def change_extension_of_path(old_path, new_extension):
     destinationdir = os.path.dirname(old_path)
     base_filename = os.path.basename(old_path)
-    new_filename = os.path.splitext(old_path)[0] + new_extension
+    new_filename = os.path.splitext(base_filename)[0] + new_extension
     return os.path.join(destinationdir, new_filename)
 
 def warn(warning_message):
